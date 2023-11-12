@@ -1,9 +1,10 @@
 import styles from "@/styles/addUser.module.css";
+import { addUser } from "@/app/lib/actions";
 
-const adduser = () => {
+const adduserPage = () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form action={addUser} className={styles.form}>
         <input type="text" placeholder="Username" name="username" required />
         <input type="email" placeholder="Email" name="email" required />
         <input
@@ -35,4 +36,4 @@ const adduser = () => {
   );
 };
 
-export default adduser;
+export default adduserPage;

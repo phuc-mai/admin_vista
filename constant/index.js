@@ -131,3 +131,5 @@ export const cardData = [
     change: 18,
   },
 ];
+
+export const productCategory = ["Kitchen", "Beauty", "Electronics"]

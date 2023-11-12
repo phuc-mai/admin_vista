@@ -1,15 +1,17 @@
 import styles from "@/styles/addProduct.module.css";
+import { productCategory } from "@/constant";
+import { addProduct } from "@/app/lib/actions";
 
-const addProduct = () => {
+const addProductPage = () => {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form action={addProduct} className={styles.form}>
         <input type="text" placeholder="Title" name="title" required />
-        <select name="cat" id="cat">
+        <select name="category" id="category">
           <option value="general">Choose a Category</option>
-          <option value="kitchen">Kitchen</option>
-          <option value="phone">Phone</option>
-          <option value="computer">Computer</option>
+          {productCategory.map((category) => (
+            <option value={category}>{category}</option>
+          ))}
         </select>
         <input type="number" placeholder="Price" name="price" required />
         <input type="number" placeholder="Stock" name="stock" required />
@@ -17,8 +19,8 @@ const addProduct = () => {
         <input type="text" placeholder="Size" name="size" />
         <textarea
           required
-          name="desc"
-          id="desc"
+          name="description"
+          id="description"
           rows="16"
           placeholder="Description"
         ></textarea>
@@ -28,4 +30,4 @@ const addProduct = () => {
   );
 };
 
-export default addProduct;
+export default addProductPage;

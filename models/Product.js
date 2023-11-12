@@ -7,6 +7,10 @@ const ProductSchema = new Schema(
       unique: [true, "Product already exist!"],
       required: [true, "Product is required!"],
     },
+    category: {
+      type: String,
+      required: [true, "Category is required!"],
+    },
     description: {
       type: String,
       required: [true, "Description is required!"],
@@ -23,10 +27,6 @@ const ProductSchema = new Schema(
       type: Number,
       required: [true, "Stock is required!"],
       min: 0,
-    },
-    category: {
-      type: String,
-      required: [true, "Category is required!"],
     },
     color: {
       type: String,
